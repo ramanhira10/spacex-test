@@ -1,0 +1,25 @@
+button {
+  margin: 10px;
+  width: 35vw;
+  background: var(--green);
+  color: var(--black);
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
+  display: inline-block;
+}
+
+button:hover {
+  font-weight: bold;
+  color: #222222;
+  background: var(--forestgreen);
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 700px) {
+
+  button {
+    width: 10vw;
+  }
+}

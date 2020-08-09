@@ -1,0 +1,87 @@
+:root {
+  --gray: #D3D3DF;
+  --white: #FFFFFF;
+  --black: #000000;
+  --green: #32CD32;
+  --forestgreen: #228B22;
+}
+
+body, a, p, ul, li, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+a, p, ul, li {
+  
+  text-decoration: none;
+}
+
+.spacex-programs {
+  display: grid;
+  padding: 10px;
+  background-color: var(--gray);
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 700px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  .spacex-programs {
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+  }
+
+  .spacex-filters {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 35vw;
+  }
+
+  
+
+  button {
+    width: 10vw;
+  }
+}
+
+/* desktop styles */
+@media screen and (min-width: 1024px) {
+
+  body {
+    font-size: 20px;
+  }
+
+  .spacex-filters {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 25vw;
+  }
+
+  .programs {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+  }
+
+  .programs .program {
+    grid-column: auto;
+    width: 15vw;
+  }
+}
+
+/* beyond 1440px */
+@media screen and (min-width: 1440px) {
+
+  body {
+    font-size: 20px;
+  }
+
+  .spacex-programs {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
