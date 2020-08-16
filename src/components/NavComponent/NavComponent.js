@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles.css';
+import {Heading1} from './styles';
 
 const NavComponent = () => {
   return (
-    <nav className="site-nav grid">
-      <h1>SpaceX Launch Programs</h1>
+    <nav>
+      <Heading1>SpaceX Launch Programs</Heading1>
     </nav>
   );
 };

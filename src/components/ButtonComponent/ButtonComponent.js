@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles.css';
+import {Button} from './styles'
 
 const ButtonComponent = props => {
 
     return (
-        <button onClick={() => {
+        <Button onClick={() => {
             if (props.getFilterYear) {
                 props.getFilterYear(props.children);
             }
@@ -12,7 +12,7 @@ const ButtonComponent = props => {
             if (props.isLaunchedSuccessfully) {
                 props.isLaunchedSuccessfully(props.children);
             }
-        }}>{props.children}</button>
+        }}>{props.children}</Button>
     );
 };
 

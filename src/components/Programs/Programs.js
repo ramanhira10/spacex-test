@@ -1,11 +1,13 @@
 import React from 'react';
-import './styles.css';
+
+import {StyledProgramComponent, EmptyData} from './styles';
+
 import ProgramComponent from '../ProgramComponent/ProgramComponent';
 
 const Programs = ({spaceXPrograms}) => {
 
   return (
-    <div className="programs">
+    <StyledProgramComponent>
       {
         spaceXPrograms &&
         spaceXPrograms.length > 0 ?
@@ -15,10 +17,10 @@ const Programs = ({spaceXPrograms}) => {
             program={program}
           />
         )) : (
-          <div className="empty-data">No data to display</div>
+          <EmptyData>No data to display</EmptyData>
         )
       }
-    </div>
+    </StyledProgramComponent>
   );
 };
 

@@ -1,5 +1,10 @@
 import React from 'react';
-import './styles.css';
+import {
+  SpaceXFiltersComponent,
+  FilterHeading,
+  LaunchYears,
+  LaunchSuccess
+} from './styles';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 const SpaceXFilters = props => {
@@ -16,20 +21,18 @@ const SpaceXFilters = props => {
   }
 
   return (
-    <div className="spacex-filters">
+    <SpaceXFiltersComponent>
         <h2>Filters</h2>
         
-        <h3 className="filter-heading">Launch Year</h3>
-        <div className="launch-years">
-          {allLaunchYears}
-        </div>
+        <FilterHeading>Launch Year</FilterHeading>
+        <LaunchYears>{allLaunchYears}</LaunchYears>
 
-        <h3 className="filter-heading">Successful Launch</h3>
-        <div className="launch-success">
+        <FilterHeading>Successful Launch</FilterHeading>
+        <LaunchSuccess>
           <ButtonComponent isLaunchedSuccessfully={isLaunchedSuccessfully}>True</ButtonComponent>
           <ButtonComponent isLaunchedSuccessfully={isLaunchedSuccessfully}>False</ButtonComponent>
-        </div>
-      </div>
+        </LaunchSuccess>
+      </SpaceXFiltersComponent>
   );
 };
 

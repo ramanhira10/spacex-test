@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import './styles.css';
+
+import {Loader, SpaceXProgramsContainer} from './styles';
 
 import {
   getSpaceXPrograms,
@@ -45,9 +46,9 @@ const SpaceXPrograms = () => {
   }, [filterYear, filterLaunchedSuccessfully]);
 
   return isLoading ? (
-    <div className="loader">Loading ...</div>
+    <Loader>Loading ...</Loader>
   ) : (
-    <div className="spacex-programs">
+    <SpaceXProgramsContainer className="spacex-programs">
       
       <NavComponent />
 
@@ -57,7 +58,7 @@ const SpaceXPrograms = () => {
       />
 
       <Programs spaceXPrograms={spaceXPrograms}/>     
-    </div>
+    </SpaceXProgramsContainer>
   );
 };
 

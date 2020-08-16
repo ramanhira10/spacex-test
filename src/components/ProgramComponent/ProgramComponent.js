@@ -1,6 +1,15 @@
 import React from 'react';
 
-import './styles.css';
+import {
+  Program,
+  ImageContainer,
+  ImageElement, 
+  ProgramDetails,
+  ProgramHeading,
+  ProgramIDs,
+  LaunchYear,
+  LaunchSuccess
+} from './styles';
 
 const ProgramComponent = ({program}) => {
 
@@ -14,29 +23,34 @@ const ProgramComponent = ({program}) => {
   } = program;
 
   return (
-    <div className="program">
-      <div className="img">
-        <img src={links.mission_patch_small} alt="No data available" />
-      </div>  
-      <div>
+    <Program>
+      
+      <ImageContainer>
+        <ImageElement
+          src={links.mission_patch_small}
+          alt="No data available"
+        />
+      </ImageContainer>
+
+      <ProgramDetails>
         <h4>{mission_name + ' ' + flight_number}</h4>
         
         {
           mission_id &&
           mission_id.length > 0 &&
           <>
-            <p className="heading">Mission ids:</p>
-            <ul className="program-ids">
+            <ProgramHeading>Mission ids:</ProgramHeading>
+            <ProgramIDs>
               {
                 mission_id.map(mid => (<li key={mid}>{mid}</li>))
               }
-            </ul>  
+            </ProgramIDs>  
           </>
         }
-        <p className="heading">Launch Year: <span>{launch_year}</span></p>
-        <p className="heading">Successful Launch: <span>{launch_success ? 'True' : 'False'}</span></p>
-      </div>
-    </div>
+        <ProgramHeading>Launch Year: <LaunchYear>{launch_year}</LaunchYear></ProgramHeading>
+        <ProgramHeading>Successful Launch: <LaunchSuccess>{launch_success ? 'True' : 'False'}</LaunchSuccess></ProgramHeading>
+      </ProgramDetails>
+    </Program>
   );
 };
 
